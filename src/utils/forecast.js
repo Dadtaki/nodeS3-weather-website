@@ -12,8 +12,9 @@ const forecast = (latitude, longtitude, callback) =>{
       const temp = body.current.temperature;
       const precip = body.current.precip;
       const descriptions = body.current.weather_descriptions[0]
-   
-      callback(undefined, descriptions + '. It is currently '+ temp + ' degrees out. There is a ' + precip + '% chance of rain');
+      const feelslike = body.current.feelslike
+
+      callback(undefined, descriptions + '. It is currently '+ temp + ' degrees out. It feels like ' + feelslike+ 'degree.  There is a ' + precip + '% chance of rain');
     }
   })
 }
